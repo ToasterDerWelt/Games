@@ -229,7 +229,7 @@ while True:
                         winMapHandle(1, i, j, valBol)
                         zahler = 0
                     if zahler >= 3:
-                        # print("gewonnen1")
+                        print("gewonnen1")
                         valBol = status
                         mapWinner[i][j + 1] = 1
                 else:
@@ -255,6 +255,7 @@ while True:
                     if zahler >= 3:
                         mapWinner[i + 1][j + 1] = 1
                         valBol = status
+                        print("gewonnen2")
                 else:
                     winMapHandle(1, i, j, valBol)
                     zahler = 0
@@ -279,6 +280,7 @@ while True:
                         winMapHandle(1, i, j, valBol)
                         zahler = 0
                     if zahler >= 3:
+                        print("gewonnen3")
                         mapWinner[i + 1][j + 1] = 1
                         valBol = status
                 else:
@@ -306,6 +308,7 @@ while True:
                         winMapHandle(1, i, j, valBol)
                         zahler = 0
                     if zahler >= 3:
+                        print("gewonnen4")
                         mapWinner[i + 1][j - 1] = 1
                         valBol = status
                 else:
@@ -319,19 +322,21 @@ while True:
         zahler = 0  # diagonal oben 00 unten
         max = 0
         i = 1
-        co = 0
+        co = 1
         while i <= 5:
             j = 5
             while j >= max:
                 if not map[i][j] == 0:
                     status = map[i][j]
                     if i - 1 <= 4 and j >= 1 and map[i + 1][j - 1] == status:
+                        print(map[i][j])
                         winMapHandle(0, i, j, valBol)
                         zahler += 1
                     else:
                         winMapHandle(1, i, j, valBol)
                         zahler = 0
                     if zahler >= 3:
+                        print("gewonnen5")
                         mapWinner[i + 1][j - 1] = 1
                         valBol = status
                 else:
